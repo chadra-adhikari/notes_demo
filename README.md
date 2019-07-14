@@ -5,20 +5,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version- '2.6.3'
+* Rails version- '5.2.3'
 
-* System dependencies
+* System dependencies - Twitter Bootstrap
 
-* Configuration
+* Configuration-
+  * Git Clone- https://github.com/chadra-adhikari/notes_demo.git
+  * bundle install
 
-* Database creation
-
-* Database initialization
+* Database creation & migration
+  * rails db:create db:migrate
 
 * How to run the test suite
+  * rails server
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Demo
+  https://involviotest.herokuapp.com/
