@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Notes List</h2>
+  <div class="text-right form-group">
+  	<%= link_to "Add Notes", new_note_path, :class => "btn btn-primary" %>
+  </div>
+  <ul class="list-group">
+    <% if @notes.present? %>
+      <% @notes.each do |note|%>
+        <li class="list-group-item">
+            <h2><%= note.title.titleize %></h2>
+            <h6 class="tags"><%= notes_tags(note).join(",") %></h6>
+            <h5><%= note.body%></h5>
+            <h5><%= note.user %></h5>
+            <h5><%= note.created_at.localtime.strftime("%d/%b/%Y %I:%m") %></h5>
+            <%= link_to "Edit", edit_note_path(note.id), :class => "btn btn-primary" %>
+            <%= link_to "Delete", note_path(note.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
+        </li>
+      <%end%>
+    <%else%>
+      Notes not present.
+    <%end%>
+  </ul>
+  <%= will_paginate @notes %>
+</div>
